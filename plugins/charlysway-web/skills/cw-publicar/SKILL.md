@@ -31,21 +31,17 @@ Las credenciales del lab viven en el archivo `.env` de la raíz del proyecto, qu
 
 Si el archivo no existe, cópialo de `.env.example` y pide las credenciales. **Nunca uses credenciales de producción aquí.**
 
-**Para practicar o iterar** (cada persona tiene su propia URL y no pisa a nadie):
+**Por defecto, publica siempre con el nombre de la persona** (en minúsculas, sin acentos ni espacios: `maria`, `jose`). Si no sabes cómo se llama, pregúntaselo antes. Así cada persona tiene su dirección y no pisa a nadie:
 
 ```bash
 npx wrangler pages deploy sandbox --project-name=cw-lab --branch=<tu-nombre> --commit-dirty=true --env-file=.env
 ```
 
-Eso devuelve una URL propia del tipo `https://<tu-nombre>.cw-lab.pages.dev`.
+La página queda en **`https://lab.charlysway.com/<tu-nombre>/<carpeta>/`**. **Da siempre ese enlace, completo.** El Lab tiene un repartidor que enseña en `lab.charlysway.com/<nombre>/` lo que cada persona ha publicado con su nombre, así que nadie pisa a nadie aunque dos personas llamen igual a su página. (La misma página está también en `https://<tu-nombre>.cw-lab.pages.dev/<carpeta>/`, pero el enlace para compartir es el de lab.charlysway.com.)
 
-**Para dejar la pieza publicada de verdad en el lab**, cuando ya está terminada:
+Nombres que no sirven porque ya están ocupados en el Lab: `main`, `master`, `production`, `preview`, `repartidor`, `www`, `lab`, `functions`, y los de las carpetas que ya hay en `sandbox/` (por ejemplo `ejemplo` o `bienvenida-equipo`). Si el nombre de la persona coincide, usa su nombre y la inicial del apellido (`ana-g`).
 
-```bash
-npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-dirty=true --env-file=.env
-```
-
-Esa sí sale en `https://lab.charlysway.com/<carpeta>/`.
+**La rama `main` (el Lab principal) no se publica desde el ordenador de nadie del equipo:** cada publicación ahí sube la carpeta `sandbox/` entera de ese ordenador y sustituye la portada y las páginas comunes del Lab. Eso lo hace solo quien lleva el Lab.
 
 Después de publicar, **abre la URL y compruébala** antes de darla por buena. La vista previa del chat no cuenta: ahí las imágenes externas salen rotas siempre.
 

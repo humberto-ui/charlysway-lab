@@ -124,7 +124,7 @@ Cuando la persona quiera su enlace, dile que haga esto:
 3. Elegir **Preview** y poner su nombre como rama (así cada persona tiene su URL y no pisa a nadie).
 4. Arrastrar el archivo y desplegar.
 
-Su página queda en `https://<su-nombre>.cw-lab.pages.dev`. Para que salga en `lab.charlysway.com`, el despliegue se hace en Production en vez de Preview.
+Su página queda en `https://lab.charlysway.com/<su-nombre>/` (el repartidor del Lab enseña ahí lo que cada persona publica con su nombre). Que nunca elija Production desde el panel: un despliegue sustituye todo lo publicado por lo que se arrastra, y el Lab entero pasaría a ser solo su página. Lo que tenga que quedarse en `lab.charlysway.com` lo publica quien lleva el Lab.
 
 **Lo que nunca se sube al Lab:** datos de personas (leads, alumnos, emails, teléfonos, capturas del CRM), formularios conectados, claves o contraseñas, cifras de facturación ni nada confidencial. El Lab no aparece en Google, pero cualquiera con el enlace entra.
 

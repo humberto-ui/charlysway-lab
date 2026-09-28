@@ -45,18 +45,19 @@ Las dos últimas no hace falta invocarlas a mano. Si le pides a Claude "hazme un
 Cada pieza vive en su carpeta dentro de `sandbox/`, y el nombre de la carpeta es la dirección:
 
 ```
-sandbox/bienvenida-equipo/index.html  →  lab.charlysway.com/bienvenida-equipo/
+sandbox/bienvenida-equipo/index.html  →  lab.charlysway.com/bienvenida-equipo/        (páginas comunes)
+sandbox/mi-guia/index.html            →  lab.charlysway.com/<tu-nombre>/mi-guia/     (lo que publicas tú)
 ```
 
 Necesitas un archivo `.env` en la raíz con las credenciales del Lab (nunca las de producción). Cópialo de `.env.example`. No hay que exportar nada: wrangler lo lee con `--env-file=.env`.
 
-Mientras practicas, publica en tu propia rama para no pisar a nadie:
+Cada persona publica con su nombre (en minúsculas y sin acentos) y su página sale en `https://lab.charlysway.com/<tu-nombre>/<carpeta>/`. Nadie pisa a nadie:
 
 ```bash
 npx wrangler pages deploy sandbox --project-name=cw-lab --branch=<tu-nombre> --commit-dirty=true --env-file=.env
 ```
 
-Cuando la pieza está terminada y quieres que salga en `lab.charlysway.com`:
+Lo hace un repartidor del Lab (`functions/_middleware.js`, explicado en `docs/repartidor.md`). La rama `main` (portada y páginas comunes) la publica solo quien lleva el Lab:
 
 ```bash
 npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-dirty=true --env-file=.env

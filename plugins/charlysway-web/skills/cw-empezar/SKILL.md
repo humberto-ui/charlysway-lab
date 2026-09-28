@@ -43,7 +43,7 @@ Lo que va a hacer: sustituir la paleta por la de la marca, poner Antonio en los 
 Tu página va en su propia carpeta dentro de `sandbox/`, y el nombre de la carpeta es su dirección:
 
 ```
-sandbox/guia-onboarding/index.html   →   lab.charlysway.com/guia-onboarding/
+sandbox/guia-onboarding/index.html   →   lab.charlysway.com/<tu-nombre>/guia-onboarding/
 ```
 
 El archivo tiene que llamarse `index.html`. La carpeta, en minúsculas, con guiones y sin acentos.
@@ -62,15 +62,17 @@ sandbox/
 - Una carpeta con `index.html` dentro es una dirección limpia.
 - Enlaza entre páginas con la ruta desde la raíz y barra final: `<a href="/mi-landing/gracias/">`.
 - Un archivo suelto también sirve: `nota.html` queda en `/nota`, sin extensión.
-- Si escribes mal una dirección **no verás un error, verás la portada del Lab**. Cuando esperes tu página y salga la portada, revisa el nombre de la carpeta.
+- Si escribes mal una dirección verás el aviso «Esta página no existe». Revisa tu nombre y el de la página, o pídele a Claude el enlace completo.
 
-Para publicar:
+Para publicar, dile a Claude «publica esta página en el Lab con mi nombre». Por debajo lanza esto, con tu nombre en minúsculas y sin acentos:
 
 ```bash
-npx wrangler pages deploy sandbox --project-name=cw-lab --branch=main --commit-dirty=true --env-file=.env
+npx wrangler pages deploy sandbox --project-name=cw-lab --branch=<tu-nombre> --commit-dirty=true --env-file=.env
 ```
 
-Mientras estés probando y no quieras pisar lo de nadie, cambia `main` por tu nombre y tendrás una dirección propia solo para ti.
+Tu página queda en **`https://lab.charlysway.com/<tu-nombre>/<carpeta>/`**. Cada persona tiene su parte del Lab con su nombre, así que nadie pisa a nadie.
+
+El Lab principal (la rama `main`) no se publica desde tu ordenador: lo lleva una sola persona.
 
 **Abre siempre la URL publicada antes de darla por buena.** La vista previa del chat no sirve para juzgar.
 

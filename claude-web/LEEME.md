@@ -23,7 +23,9 @@ Como en la web no hay terminal, se publica desde el panel de Cloudflare:
 3. Elige **Preview** y pon tu nombre como rama. Así cada persona tiene su URL y nadie pisa a nadie.
 4. Arrastra el archivo y despliega.
 
-Tu página queda en `https://<tu-nombre>.cw-lab.pages.dev`. Para que salga en `lab.charlysway.com`, el despliegue va en **Production** en vez de Preview.
+Tu página queda en `https://lab.charlysway.com/<tu-nombre>/` (y también en `https://<tu-nombre>.cw-lab.pages.dev`).
+
+**Nunca elijas Production desde el panel.** Un despliegue sustituye todo lo publicado por lo que arrastras: si subes solo tu `index.html`, el Lab entero pasa a ser tu página y desaparece todo lo demás. Lo que tenga que quedarse en `lab.charlysway.com` lo publica quien lleva el Lab.
 
 ## Cuando la skill cambie
 
