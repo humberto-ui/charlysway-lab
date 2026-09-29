@@ -31,7 +31,13 @@ Las credenciales del lab viven en el archivo `.env` de la raíz del proyecto, qu
 
 Si el archivo no existe, cópialo de `.env.example` y pide las credenciales. **Nunca uses credenciales de producción aquí.**
 
-**Por defecto, publica siempre con el nombre de la persona** (en minúsculas, sin acentos ni espacios: `maria`, `jose`). Si no sabes cómo se llama, pregúntaselo antes. Así cada persona tiene su dirección y no pisa a nadie:
+**Cada persona publica siempre con su nombre del Lab**: una palabra corta en minúsculas, sin acentos ni espacios. Puede ser su nombre (`maria`, `maria-jose`) o cualquier otra (`ventas`, `equipo-marketing`). Así cada una tiene su dirección y no pisa a nadie. Antes de publicar, resuelve ese nombre así:
+
+1. **¿Ya lo tiene?** Si en la raíz del proyecto existe el archivo `.lab-nombre`, su contenido (una línea) es el nombre de esta persona: úsalo sin preguntar y sin comprobar nada más.
+2. **Si no lo tiene**, usa el que te haya dicho o pregúntale con qué nombre quiere publicar en el Lab (su nombre o cualquier palabra corta), y conviértelo tú al formato (`María José` → `maria-jose`). No puede ser uno de los reservados (lista de abajo).
+3. **Comprueba que está libre** con una petición a `https://<nombre>.cw-lab.pages.dev/`: si responde **404**, está libre; cualquier otra respuesta significa que ya lo usa otra persona del equipo. (Con curl: `curl -s -o /dev/null -w "%{http_code}" https://<nombre>.cw-lab.pages.dev/`. En PowerShell, `Invoke-WebRequest` lanza un error con el 404: captúralo y léelo como «libre».)
+4. **Si está ocupado, NO publiques todavía.** Díselo claro, en tono amable y sin tecnicismos, proponle una alternativa libre (compruébala también) y **espera su respuesta**: «El nombre ana ya existe en el Lab. Si es tuyo de antes (publicaste desde otro ordenador), dímelo y sigo con él; si no, ¿te vale ana-g u otro que prefieras?». Que la persona haya escrito «mi nombre es ana» o «publica con mi nombre: ana» NO significa que ese nombre del Lab sea suyo: solo sigues con un nombre ocupado si te confirma expresamente que ya publicó antes con él.
+5. **Cuando tengas el nombre**, publica y guárdalo en `.lab-nombre` (solo el nombre, una línea) para las próximas veces.
 
 ```bash
 npx wrangler pages deploy sandbox --project-name=cw-lab --branch=<tu-nombre> --commit-dirty=true --env-file=.env

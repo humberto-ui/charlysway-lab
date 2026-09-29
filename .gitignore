@@ -20,3 +20,6 @@ desktop.ini
 # Temporales
 *.log
 *.tmp
+
+# Nombre de cada persona en el Lab (lo guarda Claude al publicar)
+.lab-nombre
