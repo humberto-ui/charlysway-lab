@@ -5,18 +5,22 @@ Dos cosas viven en este repo:
 1. **La skill de marca** (`plugins/charlysway-web/`), que hace que Claude Code construya piezas web con la identidad de Charly's Way sin que tengas que explicarle nada.
 2. **El Lab** (`sandbox/`), el entorno de pruebas donde el equipo publica sus piezas, en `lab.charlysway.com`.
 
-## Instalar la skill
+## La skill viene dentro
 
-Dentro de Claude Code, dos comandos:
+No hay que instalar nada. Las skills de marca están en `.claude/skills/` y Claude Code las carga solo al abrir una sesión **en esta carpeta** (en la terminal o en la pestaña Code de la app de escritorio, eligiendo la carpeta). Comprueba que funcionan escribiendo `/cw-empezar`.
+
+Para el equipo: se descarga la carpeta (sin cuenta de GitHub, también como ZIP: https://github.com/humberto-ui/charlysway-lab/archive/refs/heads/master.zip), se crea el `.env` con las dos claves del Lab y ya está.
+
+`.claude/skills/` es una copia de `plugins/charlysway-web/skills/`: si cambias una, cambia la otra.
+
+### Como plugin (opcional, solo en la terminal)
+
+Quien quiera la skill en cualquier carpeta puede instalarla como plugin, **solo desde Claude Code en la terminal** (en la app de escritorio el comando `/plugin` no está disponible y añadir el catálogo necesita Git):
 
 ```
 /plugin marketplace add humberto-ui/charlysway-lab
 /plugin install charlysway-web@charlysway
 ```
-
-Reinicia Claude Code y ya está. Comprueba que funciona escribiendo `/cw-marca`.
-
-No hace falta cuenta de GitHub ni configurar nada: el repo es público y se descarga solo.
 
 > **Este repo es público y no contiene credenciales.** Las claves del Lab viven en variables de entorno de cada persona, nunca aquí. Si alguna vez tienes que pegar un token en un archivo, ese archivo no va al repo.
 

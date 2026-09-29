@@ -1,0 +1,79 @@
+/* ============================================================
+   Charly's Way — tokens de marca para digital
+   Copia este bloque tal cual al principio de tu CSS.
+   No transcribas colores a mano ni inventes valores nuevos.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  /* --- Color: los cuatro que mandan --- */
+  --cw-azul:          #0B89B0;  /* principal: titulares, fondos de sección, iconos */
+  --cw-naranja:       #F47149;  /* CTAs y acentos. Nunca cuerpos de texto */
+  --cw-oscuro:        #243156;  /* fondos oscuros y titulares sobre claro */
+  --cw-blanco:        #ffffff;
+
+  /* --- Color: apoyo --- */
+  --cw-azul-hondo:    #086A8A;  /* hover sobre azul */
+  --cw-naranja-hover: #E25D33;  /* hover sobre naranja */
+  --cw-tinta:         #243156;  /* cuerpos de texto sobre claro */
+  --cw-tinta-suave:   #595959;  /* texto secundario, pies de foto */
+  --cw-card:          #EDF1F8;  /* fondo de tarjetas */
+  --cw-borde:         #E1E7EF;  /* bordes finos: la marca separa con borde, no con sombra */
+
+  /* --- Tipografía --- */
+  --cw-display: 'Antonio', sans-serif;   /* SOLO titulares, SIEMPRE mayúsculas y grandes */
+  --cw-texto:   'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* --- Escala (móvil → desktop, sin media queries) --- */
+  --cw-h1:    clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --cw-h2:    clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);
+  --cw-h3:    1.25rem;
+  --cw-body:  clamp(1rem, 0.96rem + 0.2vw, 1.125rem);  /* 16-18px, nunca menos de 16 */
+  --cw-small: 0.875rem;
+
+  /* --- Formas: bordes redondeados, SIN sombras --- */
+  --cw-radio-boton: 8px;
+  --cw-radio-card:  24px;
+
+  /* --- Ritmo vertical --- */
+  --cw-seccion: clamp(3rem, 6vw, 5.5rem);
+  --cw-ancho:   1080px;
+}
+
+/* ------------------------------------------------------------
+   Base mínima. Pégala después de los tokens.
+   ------------------------------------------------------------ */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--cw-texto);
+  font-size: var(--cw-body);
+  line-height: 1.6;
+  color: var(--cw-tinta);
+  background: var(--cw-blanco);
+}
+
+h1, h2 {
+  font-family: var(--cw-display);
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin: 0 0 .4em;
+}
+
+h1 { font-size: var(--cw-h1); font-weight: 600; color: var(--cw-azul); }
+h2 { font-size: var(--cw-h2); font-weight: 400; color: var(--cw-oscuro); }
+
+h3 {
+  font-family: var(--cw-texto);
+  font-size: var(--cw-h3);
+  font-weight: 700;
+  color: var(--cw-oscuro);
+  margin: 0 0 .5em;
+}
+
+p { max-width: 62ch; }
+
+a { color: var(--cw-azul); }
