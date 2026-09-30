@@ -64,13 +64,18 @@ sandbox/
 - Un archivo suelto también sirve: `nota.html` queda en `/nota`, sin extensión.
 - Si escribes mal una dirección verás el aviso «Esta página no existe». Revisa tu nombre y el de la página, o pídele a Claude el enlace completo.
 
-Para publicar, dile a Claude «publica esta página en el Lab con mi nombre». Por debajo lanza esto, con tu nombre en minúsculas y sin acentos:
+Para publicar, díselo a Claude con palabras normales. Por debajo lanza algo así (la dirección o la carpeta, en minúsculas y sin acentos):
 
 ```bash
 npx wrangler pages deploy sandbox --project-name=cw-lab --branch=<tu-nombre> --commit-dirty=true --env-file=.env
 ```
 
-Tu página queda en **`https://lab.charlysway.com/<tu-nombre>/<carpeta>/`**. Cada persona tiene su parte del Lab con su nombre, así que nadie pisa a nadie.
+Hay dos formas, y eliges tú:
+
+- **Dirección directa**: «Publica esta página en el Lab con la dirección bienvenida» → `https://lab.charlysway.com/bienvenida/`.
+- **Dentro de tu carpeta** (tu nombre o cualquier palabra, para tener tus páginas juntas): «Publica esta página en el Lab en mi carpeta ana» → `https://lab.charlysway.com/ana/<pagina>/`.
+
+Si la dirección ya la usa otra persona, Claude te avisa y te propone otra: nadie pisa a nadie. La primera vez que publicas con un nombre nuevo, el enlace tarda uno o dos minutos en funcionar: si ves «Esta página no existe», espera y recarga.
 
 El Lab principal (la rama `main`) no se publica desde tu ordenador: lo lleva una sola persona.
 
